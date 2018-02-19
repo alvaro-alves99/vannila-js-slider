@@ -1,0 +1,32 @@
+.aparece-div{
+    display:block;
+    width:33%;
+}
+
+.some-div{
+    width:0px !important;
+}
+
+.displaynone{
+    display:none;
+}
+
+.primeira-ordem{
+    order:-2;
+}
+
+.ultima-ordem{
+    order:10;
+}
+
+.some-div .textbox109{
+    display:none !important;
+}
+
+.aparece-div .textbox109{
+    display:inline-block !important;
+}
+
+.div-block{
+    display:inline-block !important;
+}

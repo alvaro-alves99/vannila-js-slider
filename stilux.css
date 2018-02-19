@@ -1,0 +1,241 @@
+body{
+    background-color:pink;
+    margin:0;
+    padding:0;
+}
+
+#tudopaitudao{
+    width:100%;
+    position:relative;
+    display:inline-block;
+    transition:1s;
+ }
+
+.tudopai-frente{
+    transform:translatex(-33.25%);
+}
+
+.tudopai-prev{
+    transform:translatex(33.2%);
+}
+
+.tudopai-inicial{
+    transform:translatex(0%);
+}
+
+.aparece{
+    display:inline-block !important;
+    order:2;
+}
+
+.desaparece{
+    display:none !important;
+}
+
+ .cn1 {
+     position: relative;
+     width: 33.333%;
+     height: 900px;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2017/12/olhos-imagem-2.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     float:left;
+     transition:1.2s;
+     will-change:width;
+ }
+ .cn2 {
+     position: relative;
+     width: 33.333%;
+     height: 900px;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2017/12/labios-imagem.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     float:left;
+     transition:1.2s;
+     will-change:width;
+ }
+
+ .cn3 {
+     position: relative;
+     width: 33.333%;
+     height: 900px;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2017/12/Pele-imagem-2-copy.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     float:left;
+     transition:1.2s;
+     will-change:width;
+ }
+
+ .cn4 {
+     position: relative;
+     width: 0%;
+     height: 900px;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2017/12/acessorios.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     transition:1.2s;
+     will-change:width;
+ }
+
+.cn4 .textbox109{
+    display:none;
+}
+
+ .cn5 {
+     position: relative;
+     width: 0%;
+     height: 900x;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2017/12/paletas.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     float:left;
+     transition:1.2s;
+     will-change:width;
+ }
+
+ .cn6 {
+     position: relative;
+     width: 0%;
+     height: 900x;
+     background-image: url("http://homolog.tfs.com.br/wp-content/uploads/2018/02/maletas-imagem.jpg");
+     background-size: cover;
+     margin:0;
+     padding:0;
+     background-position:center;
+     border:0;
+     transition:1.2s;
+     will-change:width;
+ }
+
+ .cn:hover{
+     background-size:;
+     transition: 1s;
+ }
+
+ .inner {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.71);
+     vertical-align: middle;
+     opacity: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     transition:.7s;
+     margin:0;
+     padding:0;
+     cursor:pointer;
+ }
+
+.dentro-container{
+    display:flex;
+    width:100%;
+    transition:2s;
+}
+ .inner:hover{
+    opacity:1;
+ }
+
+ .textbox109{
+     background-color: ;
+     padding: 0;
+     margin:0;
+ }
+
+ .textbox109 a{
+    text-decoration: none;
+ }
+
+ .textbox109 h3{
+     font-family: "raleway", sans-serif;
+     font-size: 70px;
+     font-weight: 400;
+     text-transform: uppercase;
+     color:white;
+     padding:0px;
+     line-height: 0%;
+     margin-bottom:43px;
+     margin-top:90px
+ }
+
+ .textbox109 h4{
+     color: #fff;
+     font-family:"raleway",sans-serif;
+     font-weight:300;
+     font-size:22pt;
+     padding:0px;
+     line-height:60%;
+ }
+
+ .textbox109 span{
+     font-size: 120px;
+     line-height:90%;
+     margin-top: 70px;
+     font-weight:200;
+
+ }
+
+.textbox109 a{
+    background-color:red;
+}
+
+.ordem2{
+    order:2;
+}
+
+.botao{
+    position:absolute;
+    background-image:url(http://homolog.tfs.com.br/wp-content/uploads/2018/02/right-arrow-2.png);
+    background-size:contain;
+    background-repeat:no-repeat;
+    z-index:1;
+    cursor:pointer;
+    background-color:transparent;
+    border:none;
+    padding:0;
+    width:90px;
+    height:90px;
+    opacity:.7;
+}
+
+.botao:focus{
+    outline:none;
+}
+
+.botao-next{
+    top:50%;
+    left:100%;
+    transform:translate(-100%, -50%);
+}
+
+.botao-prev{
+    top:50%;
+    left:0%;
+    transform:translate(0%, -50%) scaleX(-1);
+    transition:3s;
+}
+
+.botao-prev:hover{
+
+}

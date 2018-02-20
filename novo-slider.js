@@ -7,7 +7,11 @@ var first = [0, 1, 2, 3, 4, 5];
 var last = [3, 4, 5, 0, 1, 2];
 var contador = {
     num:0,
+    tipo: "",
 };
+
+console.log("o tipo do contador: " + contador.tipo);
+
 var passou = true;
 
 var podeEntrar = false;
@@ -17,39 +21,53 @@ botaoPREV.addEventListener("click", prev);
 
 
 function next(){
-        if(contador > sections.length - 1 || contador < 0){
-            contador = 0;
+        if(contador.tipo == "prev"){
+            contador.num++;
         }
 
-        sections[first[contador]].classList.remove("aparece-div");
-        sections[first[contador]].classList.add("some-div");
+        contador.tipo = "next";
 
-        sections[last[contador]].classList.remove("some-div");
-        sections[last[contador]].classList.add("aparece-div");
+        console.log("o tipo do contador: " + contador.tipo)
 
-        if(contador == 0){
+        if(contador.num > sections.length - 1 || contador.num < 0){
+            contador.num = 0;
+        }
+
+        sections[first[contador.num]].classList.remove("aparece-div");
+        sections[first[contador.num]].classList.add("some-div");
+
+        sections[last[contador.num]].classList.remove("some-div");
+        sections[last[contador.num]].classList.add("aparece-div");
+
+        if(contador.num == 0){
             podeEntrar = true;
         }
 
-        contador++;
-        console.log("CONTADOR: " + contador);
+        contador.num++;
+        console.log("CONTADOR: " + contador.num);
 }
 
 function prev(){
-    if(contador > sections.length - 1){
-        contador = 0;
+    if(contador.tipo == "next"){
+        contador.num--;
     }
 
-    console.log("contador antes: " + contador);
+    contador.tipo = "prev";
 
-    if(contador < 0){
+    if(contador.num > sections.length - 1){
+        contador.num = 0;
+    }
+
+    console.log("contador.num antes: " + contador.num);
+
+    if(contador.num < 0){
         passou = true;
     }
 
-    if(contador <= 0 && passou){
-        contador = 0;
-        contador = (sections.length - 1) + contador;
-        console.log("contador depois: " + contador);
+    if(contador.num <= 0 && passou){
+        contador.num = 0;
+        contador.num = (sections.length - 1) + contador.num;
+        console.log("contador.num depois: " + contador.num);
 
         passou = false;
 
@@ -59,21 +77,21 @@ function prev(){
         podeEntrar = true;
     }
 
-    if(contador <=0 || podeEntrar){
+    if(contador.num <=0 || podeEntrar){
         console.log("entrei nesse if");
-        console.log("o contador chega desse jeito: " + contador);
+        console.log("o contador.num chega desse jeito: " + contador.num);
 
-        sections[last[contador]].classList.remove("aparece-div");
-        sections[last[contador]].classList.add("some-div");
+        sections[last[contador.num]].classList.remove("aparece-div");
+        sections[last[contador.num]].classList.add("some-div");
 
-        sections[first[contador]].classList.remove("aparece-div");
-        sections[first[contador]].classList.remove("some-div");
-        sections[first[contador]].classList.add("aparece-div");
+        sections[first[contador.num]].classList.remove("aparece-div");
+        sections[first[contador.num]].classList.remove("some-div");
+        sections[first[contador.num]].classList.add("aparece-div");
 
-        console.log("contador final: " + contador);
+        console.log("contador.num final: " + contador.num);
 
-        contador--;
-        console.log("CONTADOR DPS DE TUDO: " + contador);
+        contador.num--;
+        console.log("CONTADOR DPS DE TUDO: " + contador.num);
         return;
 
         }

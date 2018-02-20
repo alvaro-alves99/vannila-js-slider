@@ -28,18 +28,36 @@ function next(){
 
         contador++;
         console.log(contador);
-
 }
 
 function prev(){
 
-    sections[last[contador - 1]].classList.remove("aparece-div");
-    sections[last[contador - 1]].classList.add("some-div");
-    sections[first[contador - 1]].classList.remove("aparece-div");
-    sections[first[contador - 1]].classList.remove("some-div");
+    var position = sections.length - (contador + 1);
+    console.log("position: " + position);
+    console.log("contador antes: " + contador);
 
-    contador--;
-    console.log(contador);
+    if(contador <= 0){
+        contador = (sections.length - 1) + contador;
+        console.log("contador depois: " + contador);
+    }
+
+        sections[last[contador]].classList.remove("aparece-div");
+        sections[last[contador]].classList.add("some-div");
+
+        sections[first[contador]].classList.remove("aparece-div");
+        sections[first[contador]].classList.remove("some-div");
+        sections[first[contador]].classList.add("aparece-div");
+
+        contador--;
+        console.log("contador final: " + contador);
+
+        return;
+
+
+
+
+
+
 }
 
 function volta(){

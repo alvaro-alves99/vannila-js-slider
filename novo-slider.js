@@ -13,19 +13,17 @@ var contador = {
 
 var tamanhoTela = window.innerWidth;
 
-console.log("o tipo do contador: " + contador.tipo);
-
-var passou = true;
-
+var passou = false;
 var podeEntrar = false;
 
-window.onresize = function(){
-        tamanhoTela = window.innerWidth;
-        console.log(tamanhoTela);
-};
-
+//ESSE EVENTO DO WINDOW E ESSE IF É PRA DEIXAR RESPONSIVO
+    window.addEventListener("resize", function(){
+        resize();
+    });
     if(tamanhoTela < 1060){
         last = [2, 3, 4, 5, 1, 0];
+        var cn3 = document.querySelector(".cn3 .textbox109");
+        cn3.classList.add("displaynone");
     }
 
     botaoNEXT.addEventListener("click", next);
@@ -37,8 +35,6 @@ function next(){
         }
 
         contador.tipo = "next";
-
-        console.log("o tipo do contador: " + contador.tipo)
 
         if(contador.num > sections.length - 1 || contador.num < 0){
             contador.num = 0;
@@ -69,21 +65,21 @@ function prev(){
         contador.num = 0;
     }
 
-    console.log("contador.num antes: " + contador.num);
-
     if(contador.num < 0){
         passou = true;
     }
 
+    console.log("CONTADOR NUM ATE AQUI: " + contador.num + " | PASSOU: " + passou);
+
     if(contador.num <= 0 && passou){
+        console.log("entrei aqui777")
         contador.num = 0;
-        contador.num = (sections.length - 1) + contador.num;
+        contador.num = (sections.length - 1);
         console.log("contador.num depois: " + contador.num);
 
         passou = false;
 
         console.log(passou);
-        console.log("heheh to entrando nessa condicional ainda");
 
         podeEntrar = true;
     }
@@ -106,5 +102,14 @@ function prev(){
         return;
 
         }
+}
 
+//PRA DEIXAR RESPONSIVO NO EVENTO DE REDIMENSIONAR A JANELA DO BROWSER
+function resize(){
+    tamanhoTela = window.innerWidth;
+    if(tamanhoTela < 1060){
+        last = [2, 3, 4, 5, 1, 0];
+        var cn3 = document.querySelector(".cn3 .textbox109");
+        cn3.classList.add("displaynone");
+    }
 }

@@ -151,3 +151,18 @@ body{
     transform:translate(0%, -50%) scaleX(-1);
     transition:3s;
 }
+
+@media all and (max-width:1060px){
+    .cn1, .cn2{
+        width:50%;
+    }
+
+    .cn3{
+        width:0%;
+    }
+
+    .aparece-div{
+        display:block;
+        width:50% !important;
+    }
+}

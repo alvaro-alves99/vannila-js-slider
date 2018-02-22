@@ -5,10 +5,13 @@ var botaoPREV = document.querySelector(".botao-prev");
 
 var first = [0, 1, 2, 3, 4, 5];
 var last = [3, 4, 5, 0, 1, 2];
+
 var contador = {
     num:0,
     tipo: "",
 };
+
+var tamanhoTela = window.innerWidth;
 
 console.log("o tipo do contador: " + contador.tipo);
 
@@ -16,9 +19,17 @@ var passou = true;
 
 var podeEntrar = false;
 
-botaoNEXT.addEventListener("click", next);
-botaoPREV.addEventListener("click", prev);
+window.onresize = function(){
+        tamanhoTela = window.innerWidth;
+        console.log(tamanhoTela);
+};
 
+    if(tamanhoTela < 1060){
+        last = [2, 3, 4, 5, 1, 0];
+    }
+
+    botaoNEXT.addEventListener("click", next);
+    botaoPREV.addEventListener("click", prev);
 
 function next(){
         if(contador.tipo == "prev"){
@@ -96,9 +107,4 @@ function prev(){
 
         }
 
-}
-
-function volta(){
-    sections[last].style.order = "9";
-    sections[last].classList.remove("some-div");
 }

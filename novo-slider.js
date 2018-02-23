@@ -16,16 +16,28 @@ var tamanhoTela = window.innerWidth;
 var passou = false;
 var podeEntrar = false;
 
-//ESSE EVENTO DO WINDOW E ESSE IF É PRA DEIXAR RESPONSIVO
+//ESSE EVENTO DO WINDOW E ESSES IFS É PRA DEIXAR RESPONSIVO
     window.addEventListener("resize", function(){
         resize();
     });
-    if(tamanhoTela < 1060){
+    if(tamanhoTela < 1060 && tamanhoTela > 650){
         last = [2, 3, 4, 5, 1, 0];
         var cn3 = document.querySelector(".cn3 .textbox109");
         cn3.classList.add("displaynone");
     }
 
+    if(tamanhoTela < 649){
+        console.log("ok, é menor")
+        last = [1, 2, 3, 4, 5, 0];
+        var cn3 = document.querySelector(".cn3 .textbox109");
+        cn3.classList.add("displaynone");
+
+        var cn2 = document.querySelector(".cn2 .textbox109");
+        cn2.classList.add("displaynone");
+
+    }
+
+    //AQUI COMECA A ATRIBUICAO DE EVENTOS E AS FUNCOES PRINCIPAIS
     botaoNEXT.addEventListener("click", next);
     botaoPREV.addEventListener("click", prev);
 
@@ -99,17 +111,28 @@ function prev(){
 
         contador.num--;
         console.log("CONTADOR DPS DE TUDO: " + contador.num);
-        return;
 
+        return;
         }
 }
 
 //PRA DEIXAR RESPONSIVO NO EVENTO DE REDIMENSIONAR A JANELA DO BROWSER
 function resize(){
     tamanhoTela = window.innerWidth;
-    if(tamanhoTela < 1060){
+    if(tamanhoTela < 1060 && tamanhoTela > 650){
         last = [2, 3, 4, 5, 1, 0];
         var cn3 = document.querySelector(".cn3 .textbox109");
         cn3.classList.add("displaynone");
+    }
+
+    if(tamanhoTela < 649){
+        console.log("ok, é menor")
+        last = [1, 2, 3, 4, 5, 0];
+        var cn3 = document.querySelector(".cn3 .textbox109");
+        cn3.classList.add("displaynone");
+
+        var cn2 = document.querySelector(".cn2 .textbox109");
+        cn2.classList.add("displaynone");
+
     }
 }

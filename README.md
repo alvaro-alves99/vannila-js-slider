@@ -2,3 +2,5 @@
 
 A Slider done with sweet and pure Vanilla Javascript, without the use of any framework or library.
 I started this project to train and improve my skills with JavaScript
+
+![vanilla_js_slider](http://homolog.tfs.com.br/wp-content/uploads/2018/03/slider_print.jpg)
